@@ -3,7 +3,7 @@
 // @namespace  http://www.virtualbind.com/worldoflogsplus
 // @version    0.1
 // @description  Add enhancements to the World of Logs site.
-// @match      http://worldoflogs.com/reports/*
+// @match      http(s)?://(www.)?worldoflogs.com
 // @copyright  2013+, Virtual
 // @require http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
