@@ -14,7 +14,10 @@ var armory_url = "";
 characters.each(function(index) {
     var t = $(this);
     var character_name = t.find("span").text();
-    armory_url = "http://us.battle.net/wow/en/character/" + server + "/" + character_name + "/advanced";
+	var region = "us";
+	    if (guild.timezone.match(/Europe/))
+	      region = "eu";
+	var armory_url = "http://" + region + ".battle.net/wow/en/character/" + server + "/" + character_name + "/advanced";
     
     
     t.append("&nbsp;<small>[<a href=\"" + armory_url + "\" target=\"_new\">Armory</a>]</small>");
