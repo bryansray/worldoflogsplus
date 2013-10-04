@@ -5,7 +5,6 @@
 // @description  Add enhancements to the World of Logs site.
 // @match      *://*.worldoflogs.com/reports/*
 // @copyright  2013+, Virtual
-// @require http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
 var server = guild.realm;
