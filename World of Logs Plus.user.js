@@ -7,6 +7,13 @@
 // @copyright  2013+, Virtual
 // ==/UserScript==
 
+function commaSeparateNumber(val){
+    while (/(\d+)(\d{3})/.test(val.toString())) {
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+    }
+    return val;
+}
+
 var server = guild.realm;
 var characters = $("a span.DeathKnight, a span.Druid, a span.Hunter, a span.Mage, a span.Monk, a span.Paladin, a span.Priest, a span.Rogue, a span.Shaman, a span.Warlock, a span.Warrior").parent().parent();
 var armory_url = "";
@@ -20,4 +27,14 @@ characters.each(function(index) {
     
     
     t.append("&nbsp;<small>[<a href=\"" + armory_url + "\" target=\"_new\">Armory</a>]</small>");
+});
+
+var dataCells = $(".spellDetailsTable td");
+dataCells.each(function(index) {
+   var t = $(this);
+   var val = t.text();
+   var cleansed = val.replace(/\s/g, '');
+    
+    if ($.isNumeric(cleansed) && cleansed.length > 3)
+    	t.text(commaSeparateNumber(cleansed));
 });
